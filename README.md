@@ -14,11 +14,11 @@ CSS: Styling of the website (in the style.css file).
 JavaScript: Adds interactivity such as adding, removing, and toggling book status (in the script.js file).
 
 
-Add your own books: Click on the "Add a New Book" button and fill out the form to add a new book to your library.
+### Add your own books: Click on the "Add a New Book" button and fill out the form to add a new book to your library.
 
-Toggle read status: Click on the eye icon to mark the book as read or unread.
+### Toggle read status: Click on the eye icon to mark the book as read or unread.
 
-Remove books: Click on the trash bin icon to remove a book from the library.
+### Remove books: Click on the trash bin icon to remove a book from the library.
 
 
 ## Example Books
@@ -29,4 +29,6 @@ The website pre-populates with a few books, including:
 * The Great Gatsby by F. Scott Fitzgerald (Read)
 * Things Fall Apart by Chinua Achebe (Not Read)
 
--You can add, edit, or remove books as you like.
+- You can add, edit, or remove books as you like.
+
+## [Preview](https://olalekan66.github.io/library/)

@@ -1,9 +1,12 @@
 :root{
-    --body-bg: #01063aec;
-    --card-bg: #050505;
-    --line: #4d4848;
+    --body-bg: #d4d3d3ea;
+    --card-bg: #fffefe;
+    --form-bg: #0103462c;
+    --line: #000000;
+    --text: #4a0169;
     --btn-hover:  #03057581;
     --btn-active: #8d8b8b1f;
+    --span: #2c0149;
 }
 *{
     margin: 0;
@@ -17,7 +20,7 @@ html{
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: var(--body-bg);
-    color: #fff;
+    color: var(--text);
     padding-top: 25px;
     position: relative;
 }
@@ -39,17 +42,17 @@ h1{
 .wrapper{
     display: flex;
     justify-content: end;
-    padding: 10px 40px;
+    padding: 10px 2.5%;
 }
 button{
     border: none;
     padding: 12px 18px;
     width: 185px;
     background-color: var(--card-bg);
-    color: #fff;
+    color: var(--text);
     font-size: 1.5rem;
     font-weight: 600;
-    border-radius: 18px;
+    border-radius: 13px;
     box-shadow:  4px 3px 4px 0 rgba(0, 0, 0, 0.4);
 
     display: flex;
@@ -66,28 +69,29 @@ button:active{
 }
 img{
     width: 20px;
-    filter: invert(1);
 }
+
 dialog{
     z-index: 10;
     position: fixed;
-    width: 28vw;
-    height: 45vh;
+    width: min-content;
+    height: 52%;
     top: 20%;
-    left: 35%;
+    left: 36%;
     bottom: 20%;
     border: none;
     outline: none;
-    border-radius: 25px;
+    border-radius: 17px;
     overflow: hidden;
+    box-shadow: 4px 3px 4px 0 rgba(0, 0, 0, 0.5), -3px -4px 4px 0 rgba(0, 0, 0, 0.5);
 }
 dialog::backdrop{
     background-color: #0103466c;
 }
 
 form{
-    background-color: var(--card-bg);
-    color: #fff;
+    background-color: var(--form-bg);
+    color: var(--text);
     font-size: 1.8rem;
     padding: 20px;
     width: 100%;
@@ -96,40 +100,45 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
-    gap: 10px;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: auto;
+    flex-wrap: nowrap;
 }
 form div{
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
 }
 form div.btn{
+    flex-direction: row;
     justify-content: flex-end;
+    gap: 8px;
 }
 
 form label{
-    width: 20%;
-    text-align: left;
-    align-self: flex-start;
+    font-weight: bold;
+    margin-bottom: 2px;
 }
 form input{
-    align-self: flex-end;
-    flex: 1 1 auto;
+    width: 100%;
     outline: none;
-    width: 70%;
     font-size: 1.6rem;
-    padding: 0.4rem;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: border-color 0.2s ease-in-out;
 }
 form input:focus{
-    border-color: #007BFF;
+    border-color: var(--text);
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+.radio{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
 }
 .radio label {
     display: inline-flex;
@@ -140,11 +149,11 @@ form input:focus{
     transition: color 0.2s ease-in-out;
 }
 .radio input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    appearance: none;
-    border: 1px solid #ccc;
+    width: min(30px, 10vw);
+    height: min(20px, 8vw);
     border-radius: 4px;
+    appearance: none;
+    border: 1px solid #fff;
     outline: none;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
@@ -185,6 +194,7 @@ form button{
     width: 120px;
     padding: 8px 10px;
     font-size: 1.3rem;
+    border-radius: 8px;
 }
 
 .container{
@@ -202,10 +212,13 @@ form button{
     justify-content: space-between;
     padding: 12px 20px;
     background-color: var(--card-bg);
-    /* border: 0.1px solid var(--line); */
     font-size: 1.6rem;
-    border-radius: 24px;
-    box-shadow:  4px 3px 4px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    box-shadow:  2px 4px 4px 0 rgba(0, 0, 0, 0.3);
+}
+.card h4, span{
+    font-weight: bold;
+    color: var(--span);
 }
 .checkwrapper{
     display: flex;
@@ -214,10 +227,32 @@ form button{
     justify-content: flex-end;
 }
 .checkwrapper button{
-    width: 37px;
+    width: 49px;
     height: 33px;
-    border-radius: 6px;
+    border-radius: 9px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3), -2px -2px 4px 0 rgba(0, 0, 0, 0.3);
 }
-span{
-    font-weight: bold;
+
+@media (max-width: 768px){
+    body{
+        padding: 25px;
+    }
+    dialog{
+        left: min(200px, 30vw);
+        height: 45vh;
+        top: 28%;
+        bottom: 20%;
+    }
+}
+
+@media (max-width: 480px){
+    body{
+        padding: 19px;
+    }
+    dialog{
+        left: min(80px, 25vw);
+        height: 45vh;
+        top: 25%;
+        bottom: 20%;
+    }
 }

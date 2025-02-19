@@ -61,16 +61,23 @@ function Displaybooks(book){
     check.innerHTML = '<img src="./icons/eye-svgrepo-com.svg">'
 
     const updatetoggle = () => {
-        toggle.textContent = read ? 'Read ✔' : 'Not read :/';
+        if (read){
+            toggle.textContent = 'Read ✔';
+            toggle.setAttribute('style', 'color: #00FF40;');
+        }
+        else{
+            toggle.textContent = 'Not read :/';
+            toggle.setAttribute('style', 'color: #FF0000;');
+        }
     };
 
     updatetoggle();
 
-    check.addEventListener('click', ()=> { 
 
+    check.addEventListener('click', () => {
         read = !read;
         updatetoggle();
-     });
+    });
 
     remove.innerHTML = '<img src="./icons/rubbish-bin-svgrepo-com.svg">'
     remove.setAttribute('type', 'submit');
