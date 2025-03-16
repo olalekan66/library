@@ -1,12 +1,14 @@
 :root{
-    --body-bg: #d4d3d3ea;
-    --card-bg: #fffefe;
-    --form-bg: #0103462c;
+    --body-bg: #f7f7f7;
+    --card-bg: #c79900;
     --line: #000000;
-    --text: #4a0169;
-    --btn-hover:  #03057581;
+    --text: #1409a8;
+    --btn-bg: #b41004;
+    --btn-text:#f3f4f5;
+    --text-card: #fff;
+    --btn-hover: #b4100486;
     --btn-active: #8d8b8b1f;
-    --span: #2c0149;
+    --span: #a8180d;
 }
 *{
     margin: 0;
@@ -48,12 +50,12 @@ button{
     border: none;
     padding: 12px 18px;
     width: 185px;
-    background-color: var(--card-bg);
-    color: var(--text);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     font-size: 1.5rem;
     font-weight: 600;
     border-radius: 13px;
-    box-shadow:  4px 3px 4px 0 rgba(0, 0, 0, 0.4);
+    box-shadow:  4px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
     display: flex;
     align-items: center;
@@ -69,6 +71,7 @@ button:active{
 }
 img{
     width: 20px;
+    filter: invert(1);
 }
 dialog{
     position: fixed;
@@ -81,14 +84,14 @@ dialog{
     outline: none;
     border-radius: 17px;
     overflow: hidden;
-    box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.5), -3px -4px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 3px 4px rgba(0, 0, 0, 0.3), -3px -4px 4px rgba(0, 0, 0, 0.3);
 }
 dialog::backdrop{
-    background-color: #0103466c;
+    background-color: #05050588;
 }
 
 form{
-    background-color: var(--form-bg);
+    background-color: var(--body-bg);
     color: var(--text);
     font-size: 1.8rem;
     padding: 20px;
@@ -120,14 +123,14 @@ form label{
 form input{
     width: 100%;
     outline: none;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 2px solid #cecdcd;
+    border-radius: 13px;
     transition: border-color 0.2s ease-in-out;
 }
 form input:focus{
-    border-color: var(--text);
+    border-color: var(--btn-hover);
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 .radio{
@@ -214,6 +217,7 @@ form button{
     justify-content: space-between;
     padding: 12px 20px;
     background-color: var(--card-bg);
+    color: var(--text-card);
     font-size: 1.6rem;
     border-radius: 12px;
     box-shadow:  2px 4px 4px 0 rgba(0, 0, 0, 0.3);
@@ -232,7 +236,7 @@ form button{
     width: 49px;
     height: 33px;
     border-radius: 9px;
-    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3), -2px -2px 4px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2), -2px -2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px){

@@ -21,6 +21,11 @@ dialog.addEventListener("click", e => {
         }
         });
 
+const closer = document.querySelector('#close');
+closer.addEventListener('click', e => {
+    e.preventDefault();
+    dialog.close()
+})
 
 const myLibrary = [];
 
