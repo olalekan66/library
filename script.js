@@ -36,10 +36,6 @@ function Book(title, author, pages, read){
     this.read = read;
 };
 
-Book.prototype.info = function(){
-    return `${this.title} written by ${this.author}, ${this.pages} pages long, ${this.read}.`
-}
-
 function addBookToLibrary(book){
     myLibrary.push(book)
 }
